@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="view_form_state_ofert" model="ir.ui.view">
+        <field name="name">state.ofert.form</field>
+        <field name="model">state_ofert</field>
+        <field name="groups_id" eval="[(4, ref('state_group_manager'))]"/>
+        <field name="arch" type="xml">
+            <form string="Oferta">
+                <sheet>
+                    <group>
+                        <field name="property_id"/>
+                        <field name="nombre_ofertante"/>
+                        <field name="valor_oferta"/>
+                        <field name="fecha_oferta"/>
+                        <field name="estado_oferta"/>
+                        <field name="metodo_pago"/>
+                        <field name="contacto_ofertante"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_list_state_ofert" model="ir.ui.view">
+        <field name="name">state.ofert.list</field>
+        <field name="model">state_ofert</field>
+        <field name="groups_id" eval="[(4, ref('state_group_manager'))]"/>
+        <field name="arch" type="xml">
+            <list string="Ofertas">
+                <field name="property_id"/>
+                <field name="nombre_ofertante"/>
+                <field name="valor_oferta"/>
+                <field name="estado_oferta"/>
+                <field name="fecha_oferta"/>
+                <field name="metodo_pago"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_state_ofert" model="ir.actions.act_window">
+        <field name="name">Ofertas</field>
+        <field name="res_model">state_ofert</field>
+        <field name="groups_id" eval="[(4, ref('state_group_manager'))]"/>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

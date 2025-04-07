@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <odoo>
-    <record id="view_state_property_list" model="ir.ui.view">
+    <!-- Vista formulario de propiedad -->
+    <record id="view_form_state_property" model="ir.ui.view">
+        <field name="name">state.property.form</field>
+        <field name="model">state_property</field>
+        <field name="arch" type="xml">
+            <form string="Propiedad Inmobiliaria">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="addres"/>
+                        <field name="postal_code"/>
+                        <field name="description"/>
+                        <field name="date_disponibilidad"/>
+                        <field name="esperado_precio"/>
+                        <field name="venta_precio"/>
+                        <field name="estado_disp"/>
+                    </group>
+
+                    <group string="Características">
+                        <field name="dormitorios"/>
+                        <field name="fachadas"/>
+                        <field name="garaje"/>
+                    </group>
+
+                    <field name="living"/>
+                    <group string="Sala de estar" if="living">
+                        <field name="living_area"/>
+                        <field name="living_area_uom"/>
+                    </group>
+
+                    <field name="jardin"/>
+                    <group string="Jardín" if="jardin">
+                        <field name="jardin_area"/>
+                        <field name="jardin_uom_area"/>
+                        <field name="garden_orientacion"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Ofertas">
+                            <field name="ofertas">
+                                <list>
+                                    <field name="nombre_ofertante"/>
+                                    <field name="valor_oferta"/>
+                                    <field name="fecha_oferta"/>
+                                    <field name="metodo_pago"/>
+                                    <field name="estado_oferta"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista lista de propiedad -->
+    <record id="view_list_state_property" model="ir.ui.view">
         <field name="name">state.property.list</field>
         <field name="model">state_property</field>
         <field name="arch" type="xml">
@@ -9,43 +66,20 @@
                 <field name="addres"/>
                 <field name="esperado_precio"/>
                 <field name="venta_precio"/>
-                <field name="dormitorios"/>
-                <field name="garaje"/>
+                <field name="estado_disp"/>
+                <field name="living"/>
+                <field name="living_area"/>
                 <field name="jardin"/>
+                <field name="jardin_area"/>
             </list>
         </field>
     </record>
 
-    <record id="view_state_property_form" model="ir.ui.view">
-    <field name="name">state.property.form</field>
-    <field name="model">state_property</field>
-    <field name="arch" type="xml">
-        <form string="Propiedad Inmobiliaria">
-            <sheet>
-                <group>
-                    <field name="name"/>
-                    <field name="addres"/>
-                    <field name="postal_code"/>
-                    <field name="date_disponibilidad"/>
-                    <field name="esperado_precio"/>
-                    <field name="venta_precio"/>
-                    <field name="dormitorios"/>
-                    <field name="living_area"/>
-                    <field name="fachadas"/>
-                    <field name="garaje"/>
-                    <field name="jardin"/>
-                    <field name="jardin_area" invisible="not jardin"/>
-                    <field name="garden_orientacion" invisible="not jardin"/>
-                    <field name="description"/>
-                </group>
-            </sheet>
-        </form>
-    </field>
-</record>
-
-    <record id="action_property_model" model="ir.actions.act_window">
+    <!-- Acción de ventana -->
+    <record id="action_state_property" model="ir.actions.act_window">
         <field name="name">Propiedades</field>
         <field name="res_model">state_property</field>
         <field name="view_mode">list,form</field>
     </record>
 </odoo>
+

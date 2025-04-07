@@ -40,13 +40,14 @@ Este módulo está diseñado para inmobiliarias que buscan optimizar su gestión
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','uom'],
 
     # always loaded
     'data': [
         'security/state_security.xml',
         'security/ir.model.access.csv',
         'views/state_property_views.xml',
+        'views/state_ofert_views.xml',
         'views/state_menus.xml',
     ],
     # only loaded in demonstration mode
