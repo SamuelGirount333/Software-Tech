@@ -12,6 +12,9 @@ class state_property(models.Model):
     inverse_name='property_id',
     string='Ofertas'
     )
+    
+    manager_id = fields.Many2one('state_manager', string="Manager asignado")
+    
     addres = fields.Char(string="Direccion", required=True)
     description = fields.Text(string="Descripción")
     postal_code = fields.Char(string="Código Postal", required=True)

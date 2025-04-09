@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <!-- Vista formulario del agente -->
+    <record id="view_form_state_agent" model="ir.ui.view">
+        <field name="name">state.agent.form</field>
+        <field name="model">state_agent</field>
+        <field name="arch" type="xml">
+            <form string="Agente Inmobiliario">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="document"/>
+                        <!-- Solo managers pueden ver/editar estos campos -->
+                        <field name="user" groups="real_state.state_group_manager"/>
+                        <field name="password" password="True" groups="real_state.state_group_manager"/>
+                    </group>
+                    <group string="Propiedades asignadas">
+                        <field name="property_ids"/>
+                    </group>
+                    <group string="Manager asignado">
+                        <field name="id_manager"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista lista del agente -->
+    <record id="view_list_state_agent" model="ir.ui.view">
+        <field name="name">state.agent.list</field>
+        <field name="model">state_agent</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="document"/>
+                <field name="user" groups="real_state.state_group_manager"/>
+                <field name="id_manager"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Acción para abrir agentes -->
+    <record id="action_state_agent" model="ir.actions.act_window">
+        <field name="name">Agentes</field>
+        <field name="res_model">state_agent</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menú para agentes (solo visible para managers) -->
+    <menuitem 
+        id="menu_state_agent" 
+        name="Agentes" 
+        parent="menu_real_estate_root" 
+        action="action_state_agent"
+        sequence="30"
+        groups="real_state.state_group_manager"/>
+</odoo>

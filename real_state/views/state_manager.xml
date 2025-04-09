@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- views/state_manager_views.xml -->
+<odoo>
+    <record id="view_form_state_manager" model="ir.ui.view">
+        <field name="name">state.manager.form</field>
+        <field name="model">state_manager</field>
+        <field name="arch" type="xml">
+            <form string="Manager">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="fecha_in"/>
+                        <field name="document"/>
+                        <field name="office"/>
+                        <field name="contact"/>
+                        <field name="usuario_emp"/>
+                        <field name="password"/>
+                    </group>
+                    <group string="Propiedades">
+                        <field name="property_ids"/>
+                    </group>
+                    <group string="Agentes a Cargo">
+                        <field name="agent_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_list_state_manager" model="ir.ui.view">
+        <field name="name">state.manager.list</field>
+        <field name="model">state_manager</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="office"/>
+                <field name="fecha_in"/>
+                <field name="contact"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_state_manager" model="ir.actions.act_window">
+        <field name="name">Managers</field>
+        <field name="res_model">state_manager</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_state_manager" name="Managers" parent="menu_real_estate_root"
+    action="action_state_manager" sequence="20"/>
+
+</odoo>
