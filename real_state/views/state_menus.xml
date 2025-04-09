@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
-<odoo>
-    <!-- Menú raíz solo para managers -->
-    <menuitem 
-        id="menu_real_estate_root" 
-        name="Inmobiliaria" 
-        sequence="1"
-        groups="state_group_manager"/>
+        <!-- Menú raíz solo para managers -->
+        <menuitem 
+            id="menu_real_estate_root" 
+            name="Inmobiliaria" 
+            sequence="1"
+            groups="state_group_manager"/>
 
-    <!-- Submenú de Propiedades solo para managers -->
-    <menuitem 
-        id="menu_real_estate_properties" 
-        name="Propiedades" 
-        parent="menu_real_estate_root" 
-        action="action_state_property"
-        sequence="10"
-        groups="state_group_manager"/>
+        <!-- Submenú de Propiedades solo para managers -->
+        <menuitem 
+            id="menu_real_estate_properties" 
+            name="Propiedades" 
+            parent="menu_real_estate_root" 
+            action="action_state_property"
+            sequence="10"
+            groups="state_group_manager"/>
 
-    <!-- Submenú de Ofertas solo para managers -->
-    <menuitem 
-        id="menu_real_estate_offers" 
-        name="Ofertas" 
-        parent="menu_real_estate_root" 
-        action="action_state_ofert"
-        sequence="20"
-        groups="state_group_manager"/>
+        <!-- Submenú de Ofertas solo para managers -->
+        <menuitem 
+            id="menu_real_estate_offers" 
+            name="Ofertas" 
+            parent="menu_real_estate_root" 
+            action="action_state_ofert"
+            sequence="20"
+            groups="state_group_manager"/>
 </odoo>
 
-</odoo>
