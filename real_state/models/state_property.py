@@ -6,7 +6,7 @@ class state_property(models.Model):
     _description = 'Propiedades inmobilirias'
     _order = 'sequence'
 
-    name = fields.Char(string="Nombre", required=True)
+    name_property = fields.Char(string="Nombre", required=True)
     ofertas = fields.One2many(
     comodel_name='state_ofert',
     inverse_name='property_id',

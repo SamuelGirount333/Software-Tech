@@ -5,7 +5,7 @@ class StateManager(models.Model):
     _description = "Managers Real State"
     _order = "sequence"
 
-    name = fields.Char(string="Nombre del Manager", required=True)
+    name_manager = fields.Char(string="Nombre del Manager", required=True)
     
     property_ids = fields.One2many("state_property", "manager_id", string="Propiedades a cargo")
     agent_ids = fields.One2many("state_agent", inverse_name="manager_id", string='Agentes a cargo')

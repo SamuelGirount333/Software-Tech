@@ -43,7 +43,7 @@
 
     <record id="action_state_manager" model="ir.actions.act_window">
         <field name="name">Managers</field>
-        <field name="res_model">state_manager</field>
+        <field name="res_model">state_manager </field>
         <field name="view_mode">list,form</field>
     </record>
 

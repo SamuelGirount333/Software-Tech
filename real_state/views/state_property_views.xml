@@ -77,34 +77,9 @@
 
     <!-- Acción de ventana -->
     <record id="action_state_property" model="ir.actions.act_window">
-        <field name="name">Propiedades</field>
+        <field name="name">Propiedades </field>
         <field name="res_model">state_property</field>
         <field name="view_mode">list,form</field>
     </record>
-
-    <!-- Accion de formulario property -->
-    <record id="action_state_form_property" model="ir.actions.act_window">
-        <field name="name">form_property</field>
-        <field name="type">ir.action.act_window</field>
-        <field name="res_model">state_property</field>
-        <field name="view_mode">form</field>
-    </record>
-
-
-    <!-- Accion form del manager -->
-    <record id="action_form_state_manager" model="ir.actions.act_window">
-    <field name="name">Managers forms</field>
-    <field name="res_model">state_manager</field>
-    <field name="view_mode">form</field>
-    </record>
-
-        <!-- Accion list del manager -->
-    <record id="action_list_state_manager" model="ir.actions.act_window">
-    <field name="name">Managers list</field>
-    <field name="res_model">state_manager</field>
-    <field name="view_mode">list</field>
-    </record>
-
-
 </odoo>
 

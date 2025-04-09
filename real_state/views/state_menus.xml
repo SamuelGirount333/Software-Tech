@@ -57,7 +57,7 @@
 
     <!-- Accion list del manager -->
     <record id="action_list_state_manager" model="ir.actions.act_window">
-    <field name="name">Managers list</field>
+    <field name="name">Managers list </field>
     <field name="res_model">state_manager</field>
     <field name="view_mode">list</field>
     </record>

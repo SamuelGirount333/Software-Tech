@@ -5,7 +5,7 @@ class state_agent(models.Model):
     _name = 'state_agent'
     _description = 'Modelo de agentes inmobiliarios'
 
-    name = fields.Char(string='Nombre del agente', required=True)
+    name_agent = fields.Char(string='Nombre del agente', required=True)
     document = fields.Integer(string='Documento', required=True)
     user = fields.Char(string='Usuario de empleado')
     password = fields.Char(string='Contrasena de usuario')

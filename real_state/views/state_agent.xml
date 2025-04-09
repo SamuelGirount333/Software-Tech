@@ -42,7 +42,7 @@
 
     <!-- Acción para abrir agentes -->
     <record id="action_state_agent" model="ir.actions.act_window">
-        <field name="name">Agentes</field>
+        <field name="name">Agentes </field>
         <field name="res_model">state_agent</field>
         <field name="view_mode">list,form</field>
     </record>
