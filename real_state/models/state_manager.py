@@ -4,7 +4,7 @@ from odoo import models, fields
 class StateManager(models.Model):
     _name = "state_manager"
     _description = "Managers Real State"
-    _order = "sequence"
+    
 
     name = fields.Char(string="Nombre del Manager", required=True)
     
