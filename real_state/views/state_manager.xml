@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- views/state_manager_views.xml -->
 <odoo>
+    <!-- views/state_manager_views.xml -->
     <record id="view_form_state_manager" model="ir.ui.view">
         <field name="name">state.manager.form</field>
         <field name="model">state_manager</field>
@@ -49,5 +49,4 @@
 
     <menuitem id="menu_state_manager" name="Managers" parent="menu_real_estate_root"
     action="action_state_manager" sequence="20"/>
-
 </odoo>

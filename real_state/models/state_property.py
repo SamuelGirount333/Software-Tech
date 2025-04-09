@@ -1,12 +1,13 @@
 from odoo import api, models, fields
 from odoo.exceptions import ValidationError
 
+# Modelo de propeidades 
 class state_property(models.Model):
     _name = 'state_property'
     _description = 'Propiedades inmobilirias'
     _order = 'sequence'
 
-    name_property = fields.Char(string="Nombre", required=True)
+    name = fields.Char(string="Nombre", required=True)
     ofertas = fields.One2many(
     comodel_name='state_ofert',
     inverse_name='property_id',
